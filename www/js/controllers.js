@@ -8,6 +8,21 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+  $scope.registerData = {};
+  //
+  $ionicModal.fromTemplateUrl('templates/registration.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal1 = modal;
+  });
+  //
+  $scope.registration = function() {
+    $scope.modal1.show();
+  };
+
+  $scope.closeRegister = function() {
+    $scope.modal1.hide();
+  };
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -23,6 +38,8 @@ angular.module('starter.controllers', [])
   $scope.closeLogin = function() {
     $scope.modal.hide();
   };
+
+  
 
   // Open the login modal
   $scope.login = function() {
@@ -43,9 +60,9 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
+    { title: 'Bappa', id: 1 },
+    { title: 'Razon', id: 2 },
+    { title: 'Moon', id: 3 },
     { title: 'Indie', id: 4 },
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
